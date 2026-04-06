@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>Test</title>
+<style>
+body { margin:0; background: #e6ddd0; font-family: 'Noto Sans KR', sans-serif; }
+.grid { display:grid; grid-template-columns: repeat(4,1fr); gap:40px; max-width:1100px; margin:40px auto; padding:0 40px; }
+.card { text-align:center; }
+.box { height:260px; display:flex; align-items:flex-end; justify-content:center; margin-bottom:12px; }
+.bottle { display:flex; flex-direction:column; align-items:center; }
+.cap { width:20px; height:18px; background:#1e1a15; border-radius:3px 3px 0 0; }
+.body { width:64px; height:155px; background:linear-gradient(180deg,#a88a65,#7a5c3e); border-radius:5px; position:relative; }
+.label { position:absolute; top:35px; left:7px; right:7px; background:#faf8f5; padding:10px 3px; text-align:center; }
+.lt { font-size:5px; color:#8a7e6e; letter-spacing:0.08em; text-transform:uppercase; display:block; margin-bottom:2px; }
+.lb { font-size:11px; color:#2a2520; font-family:Georgia,serif; font-weight:600; display:block; }
+.name { font-size:14px; color:#3a3530; }
+h1 { text-align:center; font-family:Georgia,serif; font-size:48px; color:#2a2520; padding-top:40px; }
+</style></head>
+<body>
+<h1>Purzer</h1>
+<div class="grid">
+  <div class="card"><div class="box"><div class="bottle"><div class="cap"></div><div class="body"><div class="label"><span class="lt">Room Spray</span><span class="lb">Purzer</span></div></div></div></div><div class="name">룸 스프레이</div></div>
+  <div class="card"><div class="box"><div class="bottle"><div class="cap" style="width:40px;height:14px"></div><div class="body" style="width:80px;height:150px"><div class="label"><span class="lt">Reed Diffuser</span><span class="lb">Purzer</span></div></div></div></div><div class="name">리드 디퓨저</div></div>
+  <div class="card"><div class="box"><div class="bottle"><div style="width:36px;height:5px;background:#1e1a15;border-radius:2px"></div><div style="width:6px;height:18px;background:#1e1a15"></div><div class="cap" style="width:30px;height:10px"></div><div class="body" style="width:80px;height:148px"><div class="label"><span class="lt">Hand Wash</span><span class="lb">Purzer</span></div></div></div></div><div class="name">핸드 워시</div></div>
+  <div class="card"><div class="box"><div class="bottle"><div class="cap" style="width:16px;height:25px;border-radius:8px 8px 2px 2px"></div><div class="body" style="width:44px;height:128px;background:linear-gradient(180deg,#8a6e48,#5a4028)"><div class="label" style="top:28px;left:4px;right:4px"><span class="lt">Fragrance Oil</span><span class="lb" style="font-size:9px">Purzer</span></div></div></div></div><div class="name">프라그란스 오일</div></div>
+  <div class="card"><div class="box"><div class="bottle"><div style="width:2px;height:10px;background:#c8b89a"></div><div class="body" style="width:78px;height:98px;background:rgba(255,255,255,0.8)"><div class="label" style="top:16px"><span class="lt">Fragrance Candle</span><span class="lb">Purzer</span></div></div></div></div><div class="name">프라그란스 캔들</div></div>
+  <div class="card"><div class="box"><div class="bottle"><div style="width:78px;height:12px;background:#e8e0d4;border-radius:40px 40px 0 0"></div><div class="body" style="width:78px;height:48px;background:#f0ebe3;border-radius:0"><div class="label" style="top:5px"><span class="lt">Travel Tin</span><span class="lb" style="font-size:10px">Purzer</span></div></div></div></div><div class="name">트래블 틴 캔들</div></div>
+  <div class="card"><div class="box"><div class="bottle"><div class="body" style="width:10px;height:215px;background:linear-gradient(180deg,#d4c4a8,#b8a888);border-radius:5px"></div></div></div><div class="name">인센스 스틱</div></div>
+  <div class="card"><div class="box"><div class="bottle"><div class="body" style="width:88px;height:68px;background:#fafafa;border-radius:16px"><div class="label" style="top:10px;left:8px;right:8px;background:transparent"><span class="lt">Incense Cone</span><span class="lb" style="font-size:10px">Purzer</span></div></div></div></div><div class="name">인센스 콘</div></div>
+  <div class="card"><div class="box"><div class="bottle"><div style="width:22px;height:22px;border:3px solid #c8b89a;border-radius:50%;background:#e6ddd0;position:relative;z-index:1"></div><div class="body" style="width:68px;height:155px;background:#c8b89a;margin-top:-8px"><div class="label" style="top:35px"><span class="lb" style="font-size:9px">Purzer</span></div></div></div></div><div class="name">클로젯 택</div></div>
+  <div class="card"><div class="box"><div class="bottle"><div class="body" style="width:108px;height:88px;background:#c0ae90;border-radius:3px"><div class="label" style="top:18px;left:14px;right:14px;background:transparent"><span class="lb">Purzer</span></div></div></div></div><div class="name">왁 트리머</div></div>
+  <div class="card"><div class="box"><div class="bottle"><div class="body" style="width:58px;height:128px;background:#c8b89a;border-radius:3px"><div class="label" style="top:35px;left:5px;right:5px;background:transparent"><span class="lb" style="font-size:8px">Purzer</span></div></div><div style="width:78px;height:7px;background:#b8a888;border-radius:2px;margin-top:-1px"></div></div></div><div class="name">인센스 스탠드</div></div>
+  <div class="card"><div class="box"><div class="bottle" style="flex-direction:row;align-items:flex-end;gap:4px"><div class="body" style="width:78px;height:88px;background:#c8b89a;border-radius:3px"><div class="label" style="top:18px;left:8px;right:8px;background:transparent"><span class="lb" style="font-size:8px">Purzer</span></div></div><div style="width:34px;height:118px;background:#d4c4a8;border-radius:3px"></div></div></div><div class="name">프라그란스 오일 버너</div></div>
+</div>
+</body></html>
