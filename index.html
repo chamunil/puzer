@@ -676,294 +676,305 @@
     margin-bottom: 60px;
   }
 
-  /* ─── 3D STORE INTERIOR ─── */
+  /* ─── 3D STORE HERO ─── */
+  .store-hero {
+    padding: 80px 48px 60px;
+    text-align: center;
+  }
+  .store-hero-label { margin-bottom: 48px; }
+  .store-hero-info {
+    margin-top: 32px;
+    font-size: 0.78rem; color: var(--text-dim);
+    letter-spacing: 0.06em; font-weight: 300;
+  }
   .store-3d {
-    width: min(92vw, 960px);
-    margin: 0 auto 80px;
-    perspective: 1200px;
+    width: min(94vw, 1000px);
+    margin: 0 auto;
   }
   .store-scene {
     width: 100%;
-    aspect-ratio: 1.8/1;
+    aspect-ratio: 1.9/1;
     position: relative;
-    transform-style: preserve-3d;
     overflow: hidden;
-    border-radius: 16px;
-    background: linear-gradient(180deg, #e8e2d8 0%, #ddd5c8 50%, #d0c8ba 100%);
-    box-shadow: 0 20px 60px rgba(42,37,32,0.15);
+    border-radius: 20px;
+    background: linear-gradient(180deg, #f0ebe3 0%, #e8e2d8 30%, #ddd5c8 100%);
+    box-shadow: 0 24px 80px rgba(42,37,32,0.12), 0 4px 20px rgba(42,37,32,0.06);
   }
 
   /* Ceiling */
-  .store-ceiling {
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 22%;
-    background: linear-gradient(180deg, #eae4da 0%, #e2dbd0 100%);
-    border-bottom: 2px solid rgba(42,37,32,0.06);
+  .s-ceiling {
+    position: absolute; top: 0; left: 0; right: 0;
+    height: 18%;
+    background: linear-gradient(180deg, #f2ede5 0%, #eae4da 100%);
+    border-bottom: 1px solid rgba(42,37,32,0.05);
+    z-index: 1;
   }
-  /* Ceiling beam */
-  .ceiling-beam {
-    position: absolute;
-    bottom: 0; height: 8px;
-    background: #d8d0c4;
-    border-bottom: 1px solid rgba(42,37,32,0.08);
-  }
-  .ceiling-beam.left { left: 12%; width: 20%; }
-  .ceiling-beam.right { right: 12%; width: 20%; }
-
   /* Track lights */
-  .track-rail {
-    position: absolute;
-    top: 14%; height: 3px;
-    background: #1e1a15;
-    border-radius: 2px;
-    z-index: 10;
+  .s-track {
+    position: absolute; height: 3px;
+    background: #1a1714; border-radius: 2px;
+    z-index: 12;
   }
-  .track-rail.r1 { left: 18%; width: 64%; }
-  .track-rail.r2 { left: 25%; width: 50%; top: 8%; }
-  .track-light {
+  .s-light {
     position: absolute; top: 100%;
-    width: 8px; height: 20px;
-    background: linear-gradient(180deg, #1e1a15 0%, #2a2520 100%);
-    border-radius: 0 0 3px 3px;
+    width: 7px; height: 16px;
+    background: linear-gradient(180deg, #1a1714, #2a2520);
+    border-radius: 0 0 2px 2px;
   }
-  .track-light::after {
+  .s-light::after {
     content: ''; position: absolute;
-    bottom: -30px; left: 50%; transform: translateX(-50%);
-    width: 40px; height: 30px;
-    background: radial-gradient(ellipse, rgba(220,195,150,0.12) 0%, transparent 70%);
-    pointer-events: none;
+    bottom: -40px; left: 50%; transform: translateX(-50%);
+    width: 50px; height: 40px;
+    background: radial-gradient(ellipse, rgba(230,200,150,0.1) 0%, transparent 70%);
+  }
+
+  /* Left wall */
+  .s-left-wall {
+    position: absolute;
+    top: 18%; left: 0; width: 14%;
+    height: 52%;
+    background: linear-gradient(90deg, #d8d0c2 0%, #c8bfb0 50%, #b8ae9e 100%);
+    z-index: 2;
+  }
+  .s-side-shelf {
+    position: absolute; left: 10%; right: 5%;
+    height: 1px;
+    background: rgba(42,37,32,0.15);
+  }
+  /* Right wall */
+  .s-right-wall {
+    position: absolute;
+    top: 18%; right: 0; width: 14%;
+    height: 52%;
+    background: linear-gradient(270deg, #e0d8cc 0%, #d0c8ba 50%, #c0b6a6 100%);
+    z-index: 2;
+  }
+  .s-sconce {
+    position: absolute; top: 30%; right: 30%;
+    width: 5px; height: 24px;
+    background: #1a1714; border-radius: 2px;
+  }
+  .s-sconce::after {
+    content: ''; position: absolute;
+    bottom: -20px; left: 50%; transform: translateX(-50%);
+    width: 30px; height: 20px;
+    background: radial-gradient(ellipse, rgba(230,200,150,0.15), transparent);
+  }
+
+  /* Columns */
+  .s-column {
+    position: absolute;
+    width: 3.5%; top: 14%; height: 58%;
+    background: linear-gradient(90deg, #e2dbd0, #d8d0c4, #cec6b8);
+    z-index: 9; border-radius: 2px;
+  }
+  .s-column::after {
+    content: ''; position: absolute;
+    bottom: 0; left: -15%; right: -15%; height: 5px;
+    background: #cec6b8; border-radius: 2px;
   }
 
   /* Back wall */
-  .back-wall {
+  .s-back-wall {
     position: absolute;
-    top: 22%; left: 15%; right: 15%;
-    height: 50%;
-    background: linear-gradient(180deg, #4a3e30 0%, #3e3428 100%);
-    border-radius: 2px;
-    z-index: 2;
-  }
-
-  /* Display shelf unit (back wall) */
-  .shelf-unit {
-    position: absolute;
-    top: 5%; left: 8%; right: 8%; bottom: 5%;
-    display: grid;
-    grid-template-columns: 1fr 1.4fr 1fr;
-    grid-template-rows: repeat(4, 1fr);
-    gap: 2px;
+    top: 18%; left: 14%; right: 14%;
+    height: 52%;
+    background: linear-gradient(180deg, #3e3428 0%, #352e24 50%, #2e2820 100%);
     z-index: 3;
   }
-  .shelf-cell {
-    background: rgba(200,180,150,0.08);
-    border: 1px solid rgba(200,180,150,0.06);
+  .s-backlight {
+    position: absolute;
+    top: 2%; left: 18%; right: 18%; height: 4px;
+    background: linear-gradient(90deg, rgba(230,200,150,0.3), rgba(240,215,165,0.6), rgba(230,200,150,0.3));
+    border-radius: 2px;
+    box-shadow: 0 4px 30px rgba(230,200,150,0.15), 0 8px 60px rgba(230,200,150,0.08);
+    z-index: 6;
+  }
+  .s-brand-sign {
+    position: absolute;
+    top: 8%; left: 50%; transform: translateX(-50%);
+    font-size: clamp(0.55rem, 1.1vw, 0.85rem);
+    font-weight: 900; color: rgba(220,200,165,0.6);
+    letter-spacing: 0.5em;
+    text-transform: uppercase;
+    text-shadow: 0 0 25px rgba(230,200,150,0.25);
+    z-index: 7;
+  }
+
+  /* Shelf grid */
+  .s-shelf-grid {
+    position: absolute;
+    top: 16%; left: 6%; right: 6%; bottom: 4%;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr 1fr 1.2fr 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    gap: 1px;
+    z-index: 5;
+  }
+  .s-cell {
+    background: rgba(200,180,150,0.05);
+    border-bottom: 1px solid rgba(200,180,150,0.08);
     position: relative;
     display: flex;
     align-items: flex-end;
     justify-content: center;
-    padding-bottom: 4px;
+    padding: 0 3px 3px;
+    gap: 3px;
   }
-  /* Center cells with warm backlight glow */
-  .shelf-cell.lit {
-    background: linear-gradient(180deg, rgba(220,190,140,0.15) 0%, rgba(200,170,120,0.08) 100%);
-    box-shadow: inset 0 0 20px rgba(220,190,140,0.06);
+  .s-cell.lit {
+    background: linear-gradient(180deg, rgba(230,200,150,0.12) 0%, rgba(210,180,130,0.05) 100%);
+    box-shadow: inset 0 -2px 15px rgba(230,200,150,0.06);
   }
-  /* Product silhouettes on shelves */
-  .shelf-product {
-    width: 8px; height: 18px;
-    background: rgba(60,50,38,0.6);
+  .s-cell.glass {
+    background: linear-gradient(180deg, rgba(180,200,180,0.06) 0%, rgba(160,180,160,0.03) 100%);
+    border: 1px solid rgba(200,180,150,0.08);
+  }
+
+  /* Bottle shapes */
+  .s-bottle {
+    position: relative;
+    flex-shrink: 0;
+  }
+  .s-bottle.spray {
+    width: 7px; height: 20px;
+    background: linear-gradient(180deg, #8a7050, #6a5438);
     border-radius: 2px 2px 0 0;
-    margin: 0 2px;
   }
-  .shelf-product.wide { width: 14px; height: 14px; border-radius: 2px; }
-  .shelf-product.tall { width: 6px; height: 24px; }
-  .shelf-product.round { width: 12px; height: 12px; border-radius: 50%; }
-
-  /* Center glass window/mirror */
-  .center-glass {
-    position: absolute;
-    top: 15%; left: 30%; right: 30%;
-    height: 45%;
-    background: linear-gradient(180deg, rgba(180,200,180,0.08) 0%, rgba(140,160,140,0.04) 100%);
-    border: 1px solid rgba(200,180,150,0.1);
-    z-index: 4;
-    overflow: hidden;
+  .s-bottle.spray::before {
+    content: ''; position: absolute;
+    top: -4px; left: 50%; transform: translateX(-50%);
+    width: 4px; height: 5px;
+    background: #2a2520; border-radius: 1px;
   }
-  .center-glass::after {
-    content: ''; position: absolute; inset: 0;
-    background: linear-gradient(135deg, rgba(255,255,255,0.03) 0%, transparent 50%, rgba(255,255,255,0.02) 100%);
+  .s-bottle.tall-bottle {
+    width: 5px; height: 26px;
+    background: linear-gradient(180deg, #a08a6c, #7a6448);
+    border-radius: 2px 2px 0 0;
   }
-
-  /* Warm accent light strip */
-  .accent-light {
-    position: absolute;
-    left: 8%; right: 8%;
-    height: 4px;
-    background: linear-gradient(90deg, rgba(220,190,140,0.5), rgba(240,210,160,0.7), rgba(220,190,140,0.5));
+  .s-bottle.tall-bottle::before {
+    content: ''; position: absolute;
+    top: -3px; left: 50%; transform: translateX(-50%);
+    width: 3px; height: 4px;
+    background: #2a2520; border-radius: 1px;
+  }
+  .s-bottle.short {
+    width: 10px; height: 12px;
+    background: linear-gradient(180deg, #c0aa88, #a08a68);
     border-radius: 2px;
-    box-shadow: 0 2px 20px rgba(220,190,140,0.2), 0 4px 40px rgba(220,190,140,0.1);
-    z-index: 5;
   }
-  .accent-light.top { top: 3%; }
-  .accent-light.mid { top: 48%; height: 2px; opacity: 0.5; }
+  .s-bottle.candle {
+    width: 12px; height: 10px;
+    background: rgba(250,248,245,0.7);
+    border-radius: 1px;
+  }
+  .s-bottle.candle::before {
+    content: ''; position: absolute;
+    top: -3px; left: 50%; transform: translateX(-50%);
+    width: 1px; height: 4px;
+    background: #c8b89a;
+  }
+  .s-bottle.diffuser {
+    width: 9px; height: 16px;
+    background: linear-gradient(180deg, #b8a080, #8a7258);
+    border-radius: 3px 3px 0 0;
+  }
+  .s-bottle.diffuser-reeds {
+    width: 9px; height: 16px;
+    background: linear-gradient(180deg, #b8a080, #8a7258);
+    border-radius: 3px 3px 0 0;
+  }
+  .s-bottle.diffuser-reeds::before {
+    content: ''; position: absolute;
+    top: -14px; left: 50%; transform: translateX(-50%);
+    width: 12px; height: 14px;
+    border-left: 1px solid rgba(180,160,130,0.4);
+    border-right: 1px solid rgba(180,160,130,0.4);
+    background: transparent;
+  }
+  .s-bottle.diffuser-reeds::after {
+    content: ''; position: absolute;
+    top: -14px; left: 50%; transform: translateX(-50%);
+    width: 1px; height: 14px;
+    background: rgba(180,160,130,0.4);
+  }
 
-  /* Left perspective wall */
-  .left-wall {
+  /* Glass partition */
+  .s-glass-wall {
     position: absolute;
-    top: 22%; left: 0; width: 15%;
-    height: 50%;
-    background: linear-gradient(90deg, #c8bfb0 0%, #bab0a2 60%, #a89e90 100%);
-    z-index: 1;
+    top: 20%; left: 2.5%; width: 10%;
+    height: 48%;
+    border: 1px solid rgba(42,37,32,0.08);
+    background: rgba(220,230,240,0.03);
+    z-index: 8;
   }
-  .left-wall-shelf {
-    position: absolute; right: 0;
-    width: 80%; height: 1px;
-    background: rgba(42,37,32,0.15);
-  }
-  .left-wall-shelf:nth-child(1) { top: 20%; }
-  .left-wall-shelf:nth-child(2) { top: 40%; }
-  .left-wall-shelf:nth-child(3) { top: 60%; }
-  .left-wall-shelf:nth-child(4) { top: 80%; }
-
-  /* Right perspective wall */
-  .right-wall {
-    position: absolute;
-    top: 22%; right: 0; width: 15%;
-    height: 50%;
-    background: linear-gradient(270deg, #d0c8ba 0%, #c0b8aa 60%, #b0a898 100%);
-    z-index: 1;
-  }
-
-  /* Left glass partition */
-  .glass-partition {
-    position: absolute;
-    top: 24%; left: 3%; width: 10%;
-    height: 46%;
-    border: 1px solid rgba(42,37,32,0.1);
-    background: linear-gradient(180deg, rgba(200,220,240,0.04) 0%, rgba(180,200,220,0.02) 100%);
-    z-index: 6;
-  }
-  .glass-partition .glass-frame {
+  .s-glass-bar {
     position: absolute; left: 0; right: 0;
-    height: 1px; background: rgba(42,37,32,0.15);
+    height: 1px; background: rgba(42,37,32,0.1);
   }
-  .glass-partition .glass-frame:nth-child(1) { top: 33%; }
-  .glass-partition .glass-frame:nth-child(2) { top: 66%; }
-  .glass-frame-v {
+  .s-glass-bar-v {
     position: absolute; top: 0; bottom: 0;
-    width: 1px; background: rgba(42,37,32,0.12);
-    left: 50%;
+    left: 50%; width: 1px;
+    background: rgba(42,37,32,0.08);
   }
 
   /* Floor */
-  .store-floor-3d {
+  .s-floor {
     position: absolute;
     bottom: 0; left: 0; right: 0;
-    height: 28%;
-    background: linear-gradient(180deg, #d4ccbe 0%, #c8c0b2 50%, #beb6a8 100%);
-    z-index: 5;
+    height: 30%;
+    background: linear-gradient(180deg, #d8d0c4 0%, #cec6b8 40%, #c4bca8 100%);
+    z-index: 6;
   }
-  /* Floor reflection lines */
-  .floor-line {
-    position: absolute; width: 100%;
-    height: 1px;
-    background: rgba(255,255,255,0.08);
+  .s-floor-reflect {
+    position: absolute; top: 0; left: 10%; right: 10%;
+    height: 40%;
+    background: linear-gradient(180deg, rgba(255,255,255,0.06), transparent);
   }
-  .floor-line:nth-child(1) { top: 15%; }
-  .floor-line:nth-child(2) { top: 45%; }
-  .floor-line:nth-child(3) { top: 75%; }
 
-  /* Center display counter */
-  .display-counter {
+  /* Display island / tester table */
+  .s-island {
     position: absolute;
-    bottom: 12%; left: 22%; right: 22%;
-    height: 22%;
-    z-index: 8;
+    bottom: 10%; left: 20%; right: 20%;
+    height: 20%;
+    z-index: 10;
     display: flex;
-    gap: 1%;
+    gap: 8%;
   }
-  .counter-block {
+  .s-island-block {
     flex: 1;
-    background: linear-gradient(180deg, #9a7e5c 0%, #8a7050 40%, #7a6244 100%);
-    border-radius: 3px 3px 0 0;
+    background: linear-gradient(180deg, #9a8060 0%, #8a7050 30%, #7a6244 100%);
+    border-radius: 4px 4px 0 0;
     position: relative;
-    box-shadow: 0 4px 12px rgba(42,37,32,0.2);
+    box-shadow: 0 6px 16px rgba(42,37,32,0.2);
   }
-  .counter-block::before {
+  .s-island-block::before {
     content: ''; position: absolute;
     top: 0; left: 0; right: 0; height: 3px;
-    background: linear-gradient(180deg, rgba(255,255,255,0.1), transparent);
-    border-radius: 3px 3px 0 0;
+    background: linear-gradient(180deg, rgba(255,255,255,0.12), transparent);
+    border-radius: 4px 4px 0 0;
   }
-  .counter-block.center {
-    flex: 1.3;
-    background: linear-gradient(180deg, #8a7050 0%, #7a6244 100%);
+  .s-island-gap { flex: 0; width: 0; }
+  /* Tester bottles on counter */
+  .s-tester {
+    position: absolute; top: -10px;
+    width: 6px; height: 12px;
+    background: linear-gradient(180deg, #c8b89a, #a89878);
+    border-radius: 2px 2px 0 0;
   }
-  .counter-block.side-left { border-radius: 3px 0 0 0; }
-  .counter-block.side-right { border-radius: 0 3px 0 0; }
-  /* Counter gap / entrance */
-  .counter-gap {
-    flex: 0.4;
-    background: transparent;
+  .s-tester::before {
+    content: ''; position: absolute;
+    top: -3px; left: 50%; transform: translateX(-50%);
+    width: 3px; height: 4px;
+    background: #2a2520; border-radius: 1px;
   }
-  /* Counter surface highlights */
-  .counter-surface {
-    position: absolute;
-    top: 2px; left: 8%; right: 8%;
-    height: 3px;
-    background: rgba(255,255,255,0.06);
+  .s-tester.wide {
+    width: 10px; height: 8px;
+    background: rgba(250,248,245,0.6);
     border-radius: 1px;
   }
-
-  /* Left column */
-  .store-column {
-    position: absolute;
-    width: 4%;
-    top: 18%; height: 54%;
-    background: linear-gradient(90deg, #ddd5c8 0%, #d0c8ba 50%, #c8c0b2 100%);
-    z-index: 7;
-    border-radius: 2px;
-  }
-  .store-column.col-left { left: 13%; }
-  .store-column.col-right { right: 13%; }
-  .store-column::before {
-    content: ''; position: absolute;
-    bottom: 0; left: -20%; right: -20%; height: 6px;
-    background: #c8c0b2;
-    border-radius: 2px;
-  }
-
-  /* Right wall sconce */
-  .wall-sconce {
-    position: absolute;
-    right: 5%; top: 35%;
-    width: 6px; height: 28px;
-    background: #1e1a15;
-    border-radius: 2px;
-    z-index: 7;
-  }
-  .wall-sconce::after {
-    content: ''; position: absolute;
-    bottom: -15px; left: 50%; transform: translateX(-50%);
-    width: 24px; height: 15px;
-    background: radial-gradient(ellipse, rgba(220,190,140,0.12), transparent);
-  }
-
-  /* Brand sign on back wall */
-  .store-brand-sign {
-    position: absolute;
-    top: 26%; left: 50%; transform: translateX(-50%);
-    z-index: 6;
-    text-align: center;
-    pointer-events: none;
-  }
-  .store-brand-sign span {
-    font-size: clamp(0.6rem, 1.2vw, 0.9rem);
-    font-weight: 900; color: rgba(220,200,170,0.7);
-    letter-spacing: 0.4em;
-    text-transform: uppercase;
-    text-shadow: 0 0 20px rgba(220,190,140,0.3);
+  .s-tester.wide::before {
+    width: 1px; height: 3px;
+    background: #c8b89a;
   }
 
   .flagship-info {
@@ -1126,7 +1137,8 @@
     .pc-grid { grid-template-columns: repeat(2, 1fr); gap: 28px 16px; }
     .chapter-content { padding: 80px 32px; }
     .flagship { padding: 120px 24px; }
-    .store-scene { border-radius: 12px; }
+    .store-scene { border-radius: 14px; }
+    .store-hero { padding: 60px 24px 40px; }
     .cta-section { padding: 140px 24px; }
     .footer-top { flex-direction: column; gap: 44px; }
     .footer-cols { gap: 36px; }
@@ -1184,6 +1196,124 @@
   <div class="hero-scroll">
     <span>Scroll</span>
     <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- 3D FLAGSHIP STORE -->
+<section class="store-hero">
+  <div class="store-hero-label">
+    <span class="section-label reveal">Flagship Store</span>
+    <h2 class="reveal" style="font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:900;color:var(--text-primary);letter-spacing:0.06em;text-transform:uppercase;margin-top:8px">Purzer Scent Museum</h2>
+  </div>
+  <div class="store-3d reveal">
+    <div class="store-scene">
+      <!-- Ceiling -->
+      <div class="s-ceiling"></div>
+      <!-- Track lights -->
+      <div class="s-track" style="top:8%;left:20%;width:60%">
+        <div class="s-light" style="left:5%"></div>
+        <div class="s-light" style="left:20%"></div>
+        <div class="s-light" style="left:35%"></div>
+        <div class="s-light" style="left:50%"></div>
+        <div class="s-light" style="left:65%"></div>
+        <div class="s-light" style="left:80%"></div>
+        <div class="s-light" style="left:95%"></div>
+      </div>
+      <div class="s-track" style="top:13%;left:28%;width:44%">
+        <div class="s-light" style="left:10%"></div>
+        <div class="s-light" style="left:35%"></div>
+        <div class="s-light" style="left:65%"></div>
+        <div class="s-light" style="left:90%"></div>
+      </div>
+      <!-- Left wall with side shelves -->
+      <div class="s-left-wall">
+        <div class="s-side-shelf" style="top:15%">
+          <div class="s-bottle spray" style="left:15%"></div>
+          <div class="s-bottle tall-bottle" style="left:40%"></div>
+          <div class="s-bottle short" style="left:65%"></div>
+        </div>
+        <div class="s-side-shelf" style="top:35%">
+          <div class="s-bottle diffuser" style="left:20%"></div>
+          <div class="s-bottle spray" style="left:55%"></div>
+        </div>
+        <div class="s-side-shelf" style="top:55%">
+          <div class="s-bottle candle" style="left:25%"></div>
+          <div class="s-bottle tall-bottle" style="left:60%"></div>
+        </div>
+        <div class="s-side-shelf" style="top:75%">
+          <div class="s-bottle short" style="left:30%"></div>
+          <div class="s-bottle candle" style="left:65%"></div>
+        </div>
+      </div>
+      <!-- Right wall -->
+      <div class="s-right-wall">
+        <div class="s-sconce"></div>
+      </div>
+      <!-- Columns -->
+      <div class="s-column" style="left:14%"></div>
+      <div class="s-column" style="right:14%"></div>
+      <!-- Back wall -->
+      <div class="s-back-wall">
+        <!-- Warm backlight -->
+        <div class="s-backlight"></div>
+        <!-- Shelf grid 5 cols x 4 rows -->
+        <div class="s-shelf-grid">
+          <!-- Row 1 -->
+          <div class="s-cell"><div class="s-bottle spray"></div><div class="s-bottle short"></div></div>
+          <div class="s-cell lit"><div class="s-bottle tall-bottle"></div><div class="s-bottle spray"></div><div class="s-bottle short"></div></div>
+          <div class="s-cell lit"><div class="s-bottle diffuser"></div><div class="s-bottle tall-bottle"></div></div>
+          <div class="s-cell lit"><div class="s-bottle spray"></div><div class="s-bottle candle"></div><div class="s-bottle short"></div></div>
+          <div class="s-cell"><div class="s-bottle short"></div><div class="s-bottle spray"></div></div>
+          <!-- Row 2 -->
+          <div class="s-cell"><div class="s-bottle tall-bottle"></div><div class="s-bottle candle"></div></div>
+          <div class="s-cell lit"><div class="s-bottle candle"></div><div class="s-bottle spray"></div></div>
+          <div class="s-cell glass"><div class="s-bottle diffuser-reeds"></div></div>
+          <div class="s-cell lit"><div class="s-bottle spray"></div><div class="s-bottle tall-bottle"></div></div>
+          <div class="s-cell"><div class="s-bottle candle"></div><div class="s-bottle short"></div></div>
+          <!-- Row 3 -->
+          <div class="s-cell"><div class="s-bottle spray"></div></div>
+          <div class="s-cell lit"><div class="s-bottle diffuser"></div><div class="s-bottle spray"></div><div class="s-bottle candle"></div></div>
+          <div class="s-cell glass"></div>
+          <div class="s-cell lit"><div class="s-bottle candle"></div><div class="s-bottle diffuser"></div><div class="s-bottle short"></div></div>
+          <div class="s-cell"><div class="s-bottle tall-bottle"></div></div>
+          <!-- Row 4 -->
+          <div class="s-cell"><div class="s-bottle candle"></div><div class="s-bottle spray"></div></div>
+          <div class="s-cell lit"><div class="s-bottle short"></div><div class="s-bottle tall-bottle"></div><div class="s-bottle candle"></div></div>
+          <div class="s-cell lit"><div class="s-bottle spray"></div><div class="s-bottle diffuser"></div></div>
+          <div class="s-cell lit"><div class="s-bottle tall-bottle"></div><div class="s-bottle spray"></div><div class="s-bottle short"></div></div>
+          <div class="s-cell"><div class="s-bottle diffuser"></div><div class="s-bottle candle"></div></div>
+        </div>
+        <!-- Brand sign -->
+        <div class="s-brand-sign">PURZER</div>
+      </div>
+      <!-- Glass partition left -->
+      <div class="s-glass-wall">
+        <div class="s-glass-bar" style="top:33%"></div>
+        <div class="s-glass-bar" style="top:66%"></div>
+        <div class="s-glass-bar-v"></div>
+      </div>
+      <!-- Floor -->
+      <div class="s-floor">
+        <div class="s-floor-reflect"></div>
+      </div>
+      <!-- Display island (테스터 테이블) -->
+      <div class="s-island">
+        <div class="s-island-block left">
+          <div class="s-tester" style="left:15%"></div>
+          <div class="s-tester wide" style="left:45%"></div>
+          <div class="s-tester" style="left:75%"></div>
+        </div>
+        <div class="s-island-gap"></div>
+        <div class="s-island-block right">
+          <div class="s-tester" style="left:20%"></div>
+          <div class="s-tester wide" style="left:50%"></div>
+          <div class="s-tester" style="left:80%"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="store-hero-info reveal">
+    <span>경북 경주시 포석로 1039-1 1층 · 황리단길</span>
   </div>
 </section>
 
@@ -1477,144 +1607,6 @@
     향을 체험하고 도시의 공기를 느끼는 공간,<br>도시의 향을 기록하는 향 라이브러리
   </p>
 
-  <!-- 3D STORE INTERIOR -->
-  <div class="store-3d reveal">
-    <div class="store-scene">
-      <!-- Ceiling -->
-      <div class="store-ceiling">
-        <div class="ceiling-beam left"></div>
-        <div class="ceiling-beam right"></div>
-      </div>
-
-      <!-- Track lighting -->
-      <div class="track-rail r1">
-        <div class="track-light" style="left:8%"></div>
-        <div class="track-light" style="left:22%"></div>
-        <div class="track-light" style="left:36%"></div>
-        <div class="track-light" style="left:50%"></div>
-        <div class="track-light" style="left:64%"></div>
-        <div class="track-light" style="left:78%"></div>
-        <div class="track-light" style="left:92%"></div>
-      </div>
-      <div class="track-rail r2">
-        <div class="track-light" style="left:15%"></div>
-        <div class="track-light" style="left:40%"></div>
-        <div class="track-light" style="left:60%"></div>
-        <div class="track-light" style="left:85%"></div>
-      </div>
-
-      <!-- Side walls -->
-      <div class="left-wall">
-        <div class="left-wall-shelf"></div>
-        <div class="left-wall-shelf"></div>
-        <div class="left-wall-shelf"></div>
-        <div class="left-wall-shelf"></div>
-      </div>
-      <div class="right-wall"></div>
-
-      <!-- Glass partition (left) -->
-      <div class="glass-partition">
-        <div class="glass-frame"></div>
-        <div class="glass-frame"></div>
-        <div class="glass-frame-v"></div>
-      </div>
-
-      <!-- Columns -->
-      <div class="store-column col-left"></div>
-      <div class="store-column col-right"></div>
-
-      <!-- Back wall with shelves -->
-      <div class="back-wall">
-        <div class="accent-light top"></div>
-        <div class="accent-light mid"></div>
-        <div class="shelf-unit">
-          <div class="shelf-cell">
-            <div class="shelf-product"></div>
-            <div class="shelf-product tall"></div>
-          </div>
-          <div class="shelf-cell lit">
-            <div class="shelf-product"></div>
-            <div class="shelf-product"></div>
-            <div class="shelf-product tall"></div>
-          </div>
-          <div class="shelf-cell">
-            <div class="shelf-product tall"></div>
-            <div class="shelf-product"></div>
-          </div>
-          <div class="shelf-cell">
-            <div class="shelf-product"></div>
-            <div class="shelf-product wide"></div>
-          </div>
-          <div class="shelf-cell lit">
-            <div class="shelf-product"></div>
-            <div class="shelf-product round"></div>
-            <div class="shelf-product"></div>
-          </div>
-          <div class="shelf-cell">
-            <div class="shelf-product wide"></div>
-            <div class="shelf-product"></div>
-          </div>
-          <div class="shelf-cell">
-            <div class="shelf-product tall"></div>
-          </div>
-          <div class="shelf-cell lit">
-            <div class="shelf-product"></div>
-            <div class="shelf-product tall"></div>
-            <div class="shelf-product"></div>
-          </div>
-          <div class="shelf-cell">
-            <div class="shelf-product round"></div>
-            <div class="shelf-product"></div>
-          </div>
-          <div class="shelf-cell">
-            <div class="shelf-product"></div>
-            <div class="shelf-product"></div>
-          </div>
-          <div class="shelf-cell lit">
-            <div class="shelf-product wide"></div>
-            <div class="shelf-product tall"></div>
-          </div>
-          <div class="shelf-cell">
-            <div class="shelf-product"></div>
-            <div class="shelf-product round"></div>
-          </div>
-        </div>
-        <div class="center-glass"></div>
-      </div>
-
-      <!-- Brand sign -->
-      <div class="store-brand-sign">
-        <span>PURZER</span>
-      </div>
-
-      <!-- Wall sconce -->
-      <div class="wall-sconce"></div>
-
-      <!-- Floor -->
-      <div class="store-floor-3d">
-        <div class="floor-line"></div>
-        <div class="floor-line"></div>
-        <div class="floor-line"></div>
-      </div>
-
-      <!-- Display counter -->
-      <div class="display-counter">
-        <div class="counter-block side-left">
-          <div class="counter-surface"></div>
-        </div>
-        <div class="counter-block">
-          <div class="counter-surface"></div>
-        </div>
-        <div class="counter-gap"></div>
-        <div class="counter-block center">
-          <div class="counter-surface"></div>
-        </div>
-        <div class="counter-block side-right">
-          <div class="counter-surface"></div>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <div class="flagship-info reveal">
     <div class="store-name">Purzer Gyeongju Flagship</div>
